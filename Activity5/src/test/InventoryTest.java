@@ -493,21 +493,9 @@ class InventoryTest {
 	@Test
 	void testToString() {
 		String check = inv.toString();
-    	StringBuffer buf = new StringBuffer();
-    	buf.append("Coffee: ");
-    	buf.append(exp);
-    	buf.append("\n");
-    	buf.append("Milk: ");
-    	buf.append(exp);
-    	buf.append("\n");
-    	buf.append("Sugar: ");
-    	buf.append(exp);
-    	buf.append("\n");
-    	buf.append("Chocolate: ");
-    	buf.append(exp);
-    	buf.append("\n");
-		String expected = buf.toString();
-		assertTrue(check.equals(expected));
+		String expected = String.format("Coffee: %d\nMilk: %d\nSugar: %d\nChocolate: %d\n",
+				exp, exp, exp, exp);
+		assertEquals(check, expected);
 	}
 
 }
